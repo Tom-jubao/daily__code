@@ -1,0 +1,27 @@
+#include<stdio.h>
+int main()
+{
+	int a = 10;
+	int b = 3;
+    //加法
+	int c = a + b;
+	printf("%d+%d=%d\n", a, b, c);
+	//减法
+	int d = a - b;
+	printf("%d-%d=%d\n", a, b, d);
+	//乘法
+	int e = a * b;
+	printf("%d*%d=%d\n", a, b, e);
+	//除法
+	int f = a / b;
+	printf("%d/%d=%d\n", a, b, f);
+	float f1 = 10.0 / 3;
+	printf("%f\n", f1);
+	//取模
+	int g = a % b;
+	printf("%d%c%d=%d\n", a, '%', b, g);
+	float g1 = 10 % 3;
+	printf("%f\n", g1);
+	
+	return 0;
+}
