@@ -1,0 +1,149 @@
+//#include<stdio.h>
+//int main()
+//{
+//	int a = 3;
+//	char b = 'w';
+//	int arr[10] = { 0 };
+//
+//	printf("%d\n", sizeof(int));//类型括号不可删
+//	printf("%d\n", sizeof(a));  //变量括号可删
+//
+//	printf("%d\n", sizeof(char));
+//	printf("%d\n", sizeof(b));
+//
+//	printf("%d\n", sizeof(int [10]));
+//	printf("%d\n", sizeof(arr));
+//
+//	return 0;
+//}——1
+
+//#include<stdio.h>
+//int main()
+//{
+//	int a = 10;
+//	short s = 0;
+//	printf("%d\n", sizeof(s = a + 5));//最终结果由s决定——2
+//	printf("%d\n", s);                //sizeof内部表达式并不参与实际运算——0
+//	return 0;
+//}——2
+
+////" ~ "按（2进制）位取反
+//#include<stdio.h>
+//int main()
+//{
+//	int a = 11;
+//	//00000000000000000000000000001011
+//	a = a | (1 << 2);
+//	printf("%d\n", a);
+//	//00000000000000000000000000001111
+//	a = a & (~(1 << 2));
+//	printf("%d\n", a);
+//	//00000000000000000000000000001011
+//	return 0;
+//}——3
+
+////(类型)--强制类型转换
+//#include<stdio.h>
+//int main()
+//{
+//	int a = (int)3.14;
+//	printf("%d\n", a);//3
+//	return 0;
+//}——4
+
+//#include<stdio.h>
+//void test1(int arr[])
+//{
+//	printf("sizeof(arr)=%d\n", sizeof(arr));//首元素地址，指针 4（32位）
+//}
+//void test2(char ch[])
+//{
+//	printf("sizeof(ch)=%d\n", sizeof(ch));//4
+//}
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	char ch[10] = { 0 };
+//	printf("sizeof(arr)=%d\n", sizeof(arr));//40
+//	printf("sizeof(ch)=%d\n", sizeof(ch));//10
+//	test1(arr);
+//	test2(ch);
+//	return 0;
+//}——5
+
+//#include<stdio.h>
+//int main()
+//{
+//	int i = 0;
+//	/*int a = 0,b=2,c=3,d=4;*/
+//	//i = a++ && ++b && d++;    //"&&"--若左边为0，判断为假，则右边不计算，a++先使用，再++，0&&++b，则++b不计算
+//	int a = 2, b = 2, c = 3, d = 4;
+//	i = a++ || ++b || d++;      //"||"--若左边为真，则右边不计算
+//	printf("a=%d\nb=%d\nc=%d\nd=%d\n",a,b,c,d);
+//	return 0;
+//}——6
+
+////"."的应用
+//#include<stdio.h>
+//struct Stu
+//{
+//	char name[20];
+//	int age;
+//	char id[20];
+//};
+//int main()
+//{
+//	struct Stu s1 = { "王二",20,"546513548651" };
+//	printf("%s\n", s1.name);
+//	printf("%d\n", s1.age);
+//	printf("%s\n", s1.id);
+//	return 0;
+//}——7
+
+// //整形提升，案例一
+//#include<stdio.h>
+//int main()
+//{
+//	char a = 3;
+//	//00000000000000000000000000000011--(int)
+//	//00000011--(char)截断
+//	char b = 127;
+//	//00000000000000000000000001111111--(int)
+//	//01111111--(char)截断
+//	char c = a + b;
+//	//a--00000011->整形提升->00000000000000000000000000000011
+//	//b--01111111->整形提升->00000000000000000000000001111111
+//	//a+b->00000000000000000000000010000010->100000010(char)->整形提升->111111111111111111111111100000010
+//	//     11111111111111111111111110000010(补码)
+//	//     11111111111111111111111110000001(反码)
+//	//     10000000000000000000000001111110(原码)--(-126)
+//	printf("%d\n", c);
+//	return 0;
+//}——8
+
+////整形提升，案例二
+//#include<stdio.h>
+//int main()
+//{
+//	char a = 0xb6;//--8位--10110110
+//	short b = 0xb600;
+//	int c = 0xb6000000;
+//	if (a == 0xb6)//--32w位--11111111111111111111111110110110
+//		printf("a\n");
+//	if (b == 0xb600)
+//		printf("b\n");
+//	if (c == 0xb6000000)
+//		printf("c\n");
+//	return 0;
+//}——9
+
+////整形提升，案例三
+//#include<stdio.h>
+//int main()
+//{
+//	char c = 1;
+//	printf("%u\n", sizeof(c));//%u--unsigned int
+//	printf("%u\n", sizeof(+c));//c只要参与表达式计算，就会发生整形提升
+//	printf("%u\n", sizeof(!c));
+//	return 0;
+//}——10
