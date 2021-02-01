@@ -1,0 +1,76 @@
+//#include<stdio.h>//指针单元所占大小--4个字节
+//int main()
+//{
+//	int a = 10;
+//	int*p = &a;
+//	printf("%d\n", sizeof(p));
+//	char b = 'a';
+//	char*q = &b;
+//	printf("%d\n", sizeof(q));
+//	return 0;
+//}——1
+
+//#include<stdio.h>
+//int main()
+//{
+//	//指针类型所占字节大小
+//	printf("%d\n", sizeof(int*));
+//	printf("%d\n", sizeof(char*));
+//	printf("%d\n", sizeof(double*));
+//	return 0;
+//}——2
+
+//#include<stdio.h>
+//int main()
+//{
+//	//指针类型决定：指针走一步走多远
+//	int a = 0x11223344;
+//	int*pa = &a;
+//	char*pc = &a;
+//	//int*类型相差4个字节
+//	printf("%p\n", pa);
+//	printf("%p\n", pa+1);
+//	//char*类型相差1个字节
+//	printf("%p\n", pc);
+//	printf("%p\n", pc+1);
+//	return 0;
+//}——3
+
+////野指针--指针未初始化
+//#include<stdio.h>
+//int main()
+//{
+//	int*a;
+//	*a = 10;
+//	printf("%p\n", a);
+//	return 0;
+//}——4
+
+////野指针--指针越界访问
+//#include<stdio.h>
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int*p = arr;
+//	int i = 0;
+//	for (i = 0; i <= 11; i++)
+//	{
+//	   //当指针指向的范围超出数组arr范围时，p为野指针
+//		p++;
+//	}
+//	return 0;
+//}——5
+
+////野指针--指针指向的空间释放
+//#include<stdio.h>
+//int*test()
+//{
+//	int a = 10;
+//	return &a;
+//}
+//int main()
+//{
+//	int*p = test();
+//	*p = 20;
+//	return 0;
+//}——6
