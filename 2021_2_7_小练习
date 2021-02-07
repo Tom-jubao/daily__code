@@ -1,0 +1,115 @@
+////编写函数--reverse_string(递归实现)
+////实现：将参数字符串的字符反向排列
+////要求：不能使用C函数库中的字符串操作函数
+//#include<stdio.h>
+////#include<string.h>
+//
+////模拟实现strlen函数
+//
+////法一：
+//int my_strlen(char*str)
+//{
+//	int count = 0;
+//	while (*str != '\0')
+//	{
+//		count++;
+//		str += 1;
+//	}
+//	return count;
+//}
+//
+////法二：
+//int my_strlen(char*str)
+//{
+//	char*start = str;
+//	char*end = str;
+//	while (*end != '\0')
+//	{
+//		end++;
+//	}
+//	return end - start;
+//}
+//
+////法三：(递归)
+//int my_strlen(char*str)
+//{
+//	if (*str == '\0')
+//		return 0;
+//	else
+//		return my_strlen(str + 1) + 1;
+//}
+//
+////法四：（递归进阶）
+//int my_strlen(char*str)
+//{
+//	return *str ? (my_strlen(++str) + 1) : 0;
+//}
+//
+//void reverse_string(char*arr)//字符反向排列
+//{
+//	char tmp = arr[0];
+//	int len = my_strlen(arr);
+//	arr[0] = arr[len - 1];
+//	arr[len - 1] = '\0';
+//	if (my_strlen(arr + 1) >= 2)//  xx....xx
+//	{
+//		reverse_string(arr + 1);
+//	}
+//	arr[len - 1] = tmp;
+//}
+//int main()
+//{
+//	char arr[] = "abcdefg";
+//	reverse_string(arr);
+//	printf("%s\n", arr);
+//	return 0;
+//}——1
+
+////写一个递归函数DigitSum(n)，输入一个非负整数，返回组成它的数字之和
+////例如：调用DigitSum(1729)
+////      返回（1+7+2+9）=19
+////即-->输入1729   输出19
+//#include<stdio.h>
+//int DigitSum(unsigned int num)
+//{
+//	if (num > 9)
+//	{
+//		return DigitSum(num / 10) + num % 10;
+//	}
+//	else
+//	{
+//		return num;
+//	}
+//}
+//
+//int main()
+//{
+//	unsigned int num = 0;
+//	scanf_s("%d", &num);
+//	int ret = DigitSum(num);
+//	printf("%d\n", ret);
+//	return 0;
+//}——2
+
+////名称：递归实现n的k次方
+////内容：编写一个函数实现n的k次方，使用递归实现
+//#include<stdio.h>
+//double Pow(int n, int k)
+//{
+//	if (k < 0)
+//		return (1.0*(Pow(n, -k)));
+//	else if(k==0)
+//		return 1;
+//	else
+//		return n * Pow(n, k - 1);
+//}
+//
+//int main()
+//{
+//	int n = 0;
+//	int k = 0;
+//	scanf_s("%d%d", &n, &k);
+//	double ret = Pow(n, k);
+//	printf("n^k=%lf\n", ret);
+//	return 0;
+//}——3
