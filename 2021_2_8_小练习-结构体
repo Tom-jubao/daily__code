@@ -1,0 +1,103 @@
+////描述一个学生
+////名字
+////年龄
+////电话
+////性别
+//
+////一
+//struct Stu
+//{
+//	//成员变量
+//	char name[20];
+//	short age;
+//	char tele[10];
+//	char Sex[5];
+//}s1,s2,s3;//s1,s2,s3--三个全局结构体变量
+//
+////二
+//typedef struct Stu
+//{
+//	//成员变量
+//	char name[20];
+//	short age;
+//	char tele[12];
+//	char sex[5];
+//}Stu;
+//
+//int main()
+//{
+//    //一
+//	struct Stu s1;//局部变量
+//	Stu s2;
+//	return 0;
+//}——1
+
+////结构体变量的定义和初始化
+//#include<stdio.h>
+//struct S
+//{
+//	int a;
+//	char c;
+//	char arr[20];
+//	double d;
+//};
+//
+//struct T
+//{
+//	char ch[10];
+//	struct S s;
+//	char*pc;
+//};
+//
+//int main()
+//{
+//	char arr[] = "hello bit\n";
+//	struct T t = { "hehe",{100,'w',"hello world",3.14},arr };
+//	printf("%s\n", t.ch);//hehe
+//	printf("%d\n", t.s.a);//100
+//	printf("%c\n", t.s.c);//w
+//	printf("%s\n", t.s.arr);//hello world
+//	printf("%lf\n", t.s.d);//3.140000
+//	printf("%s\n", t.pc);//hello bit
+//	return 0;
+//}——2
+
+////结构体访问
+////函数传参时，参数需要压栈，若传递一个结构体对象时，结构体过大，
+////参数压栈的系统开销较大，所以导致性能下降
+//#include<stdio.h>
+//typedef struct Stu
+//{
+//	//成员变量
+//	char name[20];
+//	char age[20];
+//	char tele[12];
+//	char sex[20];
+//}Stu;
+//
+////法一：传变量
+//void Print1(Stu tmp)
+//{
+//	printf("name:>%s\n", tmp.name);
+//	printf("name:>%s\n", tmp.age);
+//	printf("name:>%s\n", tmp.tele);
+//	printf("name:>%s\n", tmp.sex);
+//}
+//
+////法二：传地址
+//void Print2(Stu* tmp)//方法更优
+//{
+//	printf("name:>%s\n", tmp->name);
+//	printf("name:>%s\n", tmp->age);
+//	printf("name:>%s\n", tmp->tele);
+//	printf("name:>%s\n", tmp->sex);
+//}
+//
+//int main()
+//{
+//	Stu s = { "隔壁老王","说出来吓死你","11223344556","随环境而变化" };
+//		Print1(s);
+//		printf("\n");
+//	    Print2(&s);
+//		return 0;
+//}——3
