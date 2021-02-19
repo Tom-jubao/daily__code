@@ -294,3 +294,97 @@
 //printf("%d ", (*(p + i))[j]);
 //printf("%d ", p[i][j]);
 ////——5
+
+////一维数组传参
+//void test(int arr[]); 
+//{};
+//void test(int arr[10]); //arr[10]中的10可以为别的数字，但防止被人误解，尽量写对
+//{};
+//void test(int* arr); 
+//{};
+//
+//void test2(int* arr[] );
+//{};
+//void test2(int*arr[20]);
+//{};
+//void test2(int**arr);
+//{};
+//
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int*arr2[20] = { 0 };
+//	test(arr);
+//	test2(arr2);
+//	return 0;
+//}
+
+//////二维数组传参
+//void test(int arr[3][5])
+//{};
+//void test(int arr[][5]) 
+//{};
+//void test(int(*arr)[5])
+//{};
+////——1
+
+////一级指针传参
+//void test1(int*p)
+//{};
+//void test2(char*pc)
+//{};
+//
+//int main()
+//{
+//	int a = 10;
+//	int*p = &a;
+//	test1(&a);
+//	test1(p);
+//
+//	char b = 'W';
+//	char*pc = &b;
+//	test2(&b);
+//	test2(pc);
+//
+//	return 0;
+//}——2
+
+////二级指针传参
+//void test(int**p)
+//{};
+//
+//int main()
+//{
+//	int*ptr;
+//	int**p = &ptr;
+//	
+//	test(&ptr);
+//	test(pp);
+//
+//	int*arr[10];//arr为数组，有10个元素，为int*类型
+//	test(arr);//指针数组也可以，arr为首元素地址
+//
+//	return 0;
+//}——3
+
+////函数指针--指向函数的指针
+//#include<stdio.h>
+//int Add(int x, int y)
+//{
+//	int z = 0;
+//	z = x + y;
+//	return z;
+//}
+//
+//int main()
+//{
+//	int a = 10;
+//	int b = 20;
+//	printf("%d\n", Add(a, b));
+//
+//	printf("%p\n", Add);
+//	printf("%p\n", &Add);
+//	//二者相同，函数名 与 &函数名 都是函数地址
+//
+//	return 0;
+//}——4
