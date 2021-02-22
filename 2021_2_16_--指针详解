@@ -701,3 +701,26 @@ int Xor(int x, int y)
 //	test(print);
 //	return 0;
 //}——3
+
+////----2.22
+////小复习
+//int main()
+//{
+//    //指针数组
+//	//int*arr[10];
+//	
+//	//数组指针
+//	//int*(*pa)[10]=&arr;
+//
+//	//函数指针
+//	//int(*pAdd)(int,int)=Add;//&Add
+//	     //int sum=(*pAdd)(1,2);
+//	     //       =pAdd(1,2);
+//	     //       =Add(1,2);
+//
+//	//函数指针的数组
+//	int(*pArr[5])(int, int);
+//
+//	//指向函数指针数组的指针
+//	int(*(*ppArr)[5])(int, int) = &pArr;
+//}——1
