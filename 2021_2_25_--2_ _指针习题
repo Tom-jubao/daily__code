@@ -1,0 +1,46 @@
+////----2.25
+//#include<stdio.h>
+//#include<string.h>
+//int main()
+//{
+//   //整形数组
+//
+//	//数组名是首元素地址
+//	//例外：1.sizeof(数组名)--数组名表示整个数组
+//	//      2.&数组名--数组名表示整个数组
+//
+//	int a[] = { 1,2,3,4 };
+//	printf("%d\n", sizeof(a));//sizeof(数组名)--计算数组总大小，单位字节
+//	printf("%d\n", sizeof(a+0));//数组名--首元素地址
+//	printf("%d\n", sizeof(*a));//数组名--首元素地址；*a为首元素
+//	printf("%d\n", sizeof(a+1));//数组名--首元素地址；a+1--第二个元素地址
+//	printf("%d\n", sizeof(a[1]));//第二个元素大小
+//	printf("%d\n", sizeof(&a));//&a--首元素地址，但也是地址
+//	printf("%d\n", sizeof(*&a));//&a--数组地址；*&a--数组地址解引用访问数组
+//	printf("%d\n", sizeof(&a+1));//&a+1--虽然跳过整个数组，但仍为数组
+//	printf("%d\n", sizeof(&a[0]));//首元素地址
+//	printf("%d\n", sizeof(&a[0]+1));//第二个元素地址
+//	printf("----------------------------------------------------\n");
+//	//字符数组
+//
+//	char ch[] = { 'a','b','c','d','e','f' };
+//
+//	printf("%d\n", sizeof(ch));//sizeof(数组名)--计算数组大小，单位字节
+//	printf("%d\n", sizeof(ch+0));//ch--首元素地址
+//	printf("%d\n", sizeof(*ch));//ch--首元素地址；*ch--首元素
+//	printf("%d\n", sizeof(ch[1]));//
+//	printf("%d\n", sizeof(&ch));//&ch虽然为数组地址，但仍为地址
+//	printf("%d\n", sizeof(&ch+1));//跳过整个数组后的地址
+//	printf("%d\n", sizeof(&ch[0]+1));//第二个元素地址
+//	printf("----------------------------------------------------\n");
+//	printf("%d\n", strlen(ch));//1.--随机值
+//	printf("%d\n", strlen(ch+0));//2.--与1完全相同--随机值
+//	//printf("%d\n", strlen(*ch));//3.--'a'--97--error
+//	//printf("%d\n", strlen(ch[1]));//4.--'b'--98--error
+//	printf("%d\n", strlen(&ch));//5.--随机值
+//	printf("%d\n", strlen(&ch+1));//6.--随机值--与5.相差6
+//	printf("%d\n", strlen(&ch[0]+1));//7.--随机值--与1.相差1
+//	printf("----------------------------------------------------\n");
+//
+//	return 0;
+//}
