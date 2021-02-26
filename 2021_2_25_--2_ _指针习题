@@ -44,3 +44,86 @@
 //
 //	return 0;
 //}
+
+////----2.26
+////字符数组
+//
+//#include<stdio.h>
+//#include<string.h>
+//int main()
+//{
+//	char arr[] = "abcdef";
+//
+//	printf("%d ", sizeof(arr));//sizeof(arr)--计算数组大小
+//	printf("%d ", sizeof(arr+0));//arr+0--首元素地址
+//	printf("%d ", sizeof(*arr));//*arr--首元素地址
+//	printf("%d ", sizeof(arr[1]));//arr[1]--第二个元素
+//	printf("%d ", sizeof(&arr));//&arr--数组地址,但仍为地址
+//	printf("%d ", sizeof(&arr+1));//&arr+1--跳过整个数组后的地址
+//	printf("%d\n", sizeof(&arr[0]+1));//&arr[0]+1--第二个元素的地址
+//	printf("\n*************\n");
+//	printf("\n");
+//
+//	printf("%d ", strlen(arr));//abcdef
+//	printf("%d ", strlen(arr+0));//同上
+//	//printf("%d ", strlen(*arr));//*arr--'a'-97被当作地址--error
+//	//printf("%d ", strlen(arr[1]));//arr[1]--'b'-98被当作地址--error
+//	printf("%d ", strlen(&arr));//&arr--数组地址，数组指针，char(*p)[n]=&arr
+//	printf("%d ", strlen(&arr+1));
+//	printf("%d\n ", strlen(&arr[0]+1));
+//	printf("\n*************");
+//
+//	return 0;
+//}——1
+
+////字符串常量
+//
+//#include<stdio.h>
+//int main()
+//{
+//	char*p = "abcdef";//p存放a的地址
+//
+//	printf("%d ", sizeof(p));//计算指针变量的大小
+//	printf("%d ", sizeof(p+1));//p+1--b的地址
+//	printf("%d ", sizeof(*p));//*p--字符串第一个字符-'a'
+//	printf("%d ", sizeof(p[0]));//arr[0] == *(arr+0)  p[0] == *(p+0)
+//	//printf("%d ", sizeof(&p));
+//	//printf("%d ", sizeof(&p+1));
+//	printf("%d\n", sizeof(&p[0]+1));//b的地址
+//	printf("\n*************\n");
+//	printf("\n");
+//
+//	printf("%d ", strlen(p));//abcdef
+//	printf("%d ", strlen(p+1));//bcdef
+//	//printf("%d ", strlen(*p));//*p--'a'-97被当作地址--error
+//	//printf("%d ", strlen(p[0]));//p[0]--'a'-97被当作地址--error
+//	printf("%d ", strlen(&p));
+//	printf("%d ", strlen(&p+1));
+//	printf("%d\n ", strlen(&p[0]+1));//&p[0]+1 -- b的地址
+//	printf("\n*************");
+//
+//	return 0;
+//}——2
+
+//二维数组
+
+#include<stdio.h>
+int main()
+{
+	int a[3][4] = { 0 };
+
+	printf("%d ", sizeof(a));
+	printf("%d ", sizeof(a[0][0]));
+	printf("%d ", sizeof(a[0]));
+	printf("%d ", sizeof(a[0]+1));
+	printf("%d ", sizeof(*(a[0]+1)));
+	printf("%d ", sizeof(a+1));
+	printf("%d ", sizeof(*(a+1)));
+	printf("%d ", sizeof((&a[0]+1)));
+	printf("%d ", sizeof(*(&a[0] + 1)));
+	printf("%d ", sizeof(*a));
+	printf("%d/n", sizeof(a[3]));
+	printf("\n*********************\n")
+
+	return 0;
+}——3
